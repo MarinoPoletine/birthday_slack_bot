@@ -25,9 +25,11 @@
 
 (defn get-data [data]
   (log/trace "Got the following data to parse:" data)
-  (html/select
+ /** (html/select
     (html/html-resource (java.io.StringReader. (:body data)))
-    [:.confluenceTable :tr]))
+    [:.confluenceTable :tr])) */
+  (json/read-str (slurp "https://github.com//MarinoPoletine/birthday_slack_bot/resources/dates.json")
+    :body data)
 
 
 (defn merge-people [content]
