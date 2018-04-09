@@ -1,6 +1,6 @@
-(ns birthday-bot.parser-test
+(ns birthday_slack_bot.parser-test
   (:require [clojure.test :refer :all]
-            [birthday-bot.parser :refer :all]
+            [birthday_slack_bot.parser :refer :all]
             [clj-http.client :as client])
   (:use clj-http.fake))
 
@@ -42,14 +42,14 @@
                          "Jan-6</td></tr>"
                          "</tbody></table></div>")}]
     (testing "get-people with a single person's birthday"
-      (with-redefs-fn {#'birthday-bot.parser/get-page (fn [config] data)
-                       #'birthday-bot.parser/get-day (fn [] "Jan-4")}
+      (with-redefs-fn {#'birthday_slack_bot.parser/get-page (fn [config] data)
+                       #'birthday_slack_bot.parser/get-day (fn [] "Jan-4")}
         #(is (= (get-people {}) "Single Person"))))
     (testing "get-people with a multiple people's birthdays"
-      (with-redefs-fn {#'birthday-bot.parser/get-page (fn [config] data)
-                       #'birthday-bot.parser/get-day (fn [] "Jan-5")}
+      (with-redefs-fn {#'birthday_slack_bot.parser/get-page (fn [config] data)
+                       #'birthday_slack_bot.parser/get-day (fn [] "Jan-5")}
         #(is (= (get-people {}) (str "Person 1 & Person 2 & Person 3")))))
     (testing "get-people with a two people's birthdays on same line"
-      (with-redefs-fn {#'birthday-bot.parser/get-page (fn [config] data)
-                       #'birthday-bot.parser/get-day (fn [] "Jan-6")}
+      (with-redefs-fn {#'birthday_slack_bot.parser/get-page (fn [config] data)
+                       #'birthday_slack_bot.parser/get-day (fn [] "Jan-6")}
         #(is (= (get-people {}) (str "Person 1 & Person 2")))))))

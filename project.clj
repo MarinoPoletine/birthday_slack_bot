@@ -1,4 +1,4 @@
-(defproject birthday-bot "0.2.1"
+(defproject birthday_slack_bot "0.2.1"
   :description "Parse our company birthday list and send out slack message for today's birthdays."
   :url "https://github.com//MarinoPoletine/birthday_slack_bot"
   :license {:name "The MIT License"
@@ -12,7 +12,7 @@
                  [org.clojure/tools.logging "0.3.1"]
                  [log4j/log4j "1.2.17"]
                  [clj-logging-config "1.9.12"]]
-  :main ^:skip-aot birthday-bot.core
+  :main ^:skip-aot birthday_slack_bot.core
   :resource-paths ["resources"]
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}

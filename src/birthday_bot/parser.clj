@@ -1,4 +1,4 @@
-(ns birthday-bot.parser
+(ns birthday_slack_bot.parser
     (:require [net.cgrand.enlive-html :as html]
               [clj-http.client :as http]
               [clj-time.core :as time]

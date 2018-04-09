@@ -1,4 +1,4 @@
-(ns birthday-bot.config
+(ns birthday_slack_bot.config
     (:require [clojure.java.io :as io]
               [clojure.edn :as edn]
               [clojure.tools.logging :as log]
@@ -19,5 +19,5 @@
              3 :trace})
 
 (defn config-log [options]
-  (log-conf/set-logger! "birthday-bot"
+  (log-conf/set-logger! "birthday_slack_bot"
                         :level (levels (:verbosity options))))

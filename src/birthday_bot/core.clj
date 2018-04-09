@@ -1,11 +1,12 @@
-(ns birthday-bot.core
+(ns birthday_slack_bot.core
   (:require [clojure.tools.cli :refer [parse-opts]]
             [clojure.tools.logging :as log]
             [clj-slack.chat :as slack]
-            [birthday-bot.config :as config]
-            [birthday-bot.parser :as parser]
+            [birthday_slack_bot.config :as config]
+            [birthday_slack_bot.parser :as parser]
             [clojure.tools.logging :as log]
-            [clojure.string :as str])
+            [clojure.string :as str]
+            [clojure.data.json :as json])
   (:gen-class))
 
 
@@ -18,7 +19,7 @@
     (slack/post-message (:slack config)
                         (:channel message)
                         (format (:message message) people)
-                        {:username "birthday-bot"
+                        {:username "birthday_slack_bot"
                          :icon_emoji ":birthday:"
                          :parse "full"
                          :link_names "1"})))
@@ -39,7 +40,7 @@
   (let [{:keys [options arguments errors summary]}
       (parse-opts args cli-options)]
     (cond
-      (:help options) (exit 0 (str "birthday-bot.\n\n"
+      (:help options) (exit 0 (str "birthday_slack_bot.\n\n"
                                    "Options:\n"
                                    summary))
       errors (exit 1 errors))
