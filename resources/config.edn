@@ -1,0 +1,11 @@
+{:birthday-webpage 
+	{:url "https://github.com//MarinoPoletine/birthday_slack_bot/resources/birthdaylist"
+	 :login-url "https://github.com/login"
+ 	 :username "ninocalifa@hotmail.com"
+ 	 :password "ninovi94"}
+ :slack
+ 	{:api-url "https://slack.com/api" 
+ 	 :token "OmULEuGRb4Zs2HdtnCi1PI0v"}
+ :message 
+ 	{:channel "#general"
+ 	 :message "@here Birthdays today! Wish a happy one to %s!"}}
