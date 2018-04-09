@@ -12,29 +12,6 @@ By default birthday_slack_bot will look for load from `/resources/config.edn`, w
 
     $ java -jar birthday_slack_bot-0.1.0-standalone.jar -c /path/to/config.edn
 
-We maintain our birthday list with a page in confluence. The table has a layout of:
-
-```	
-<p><strong>JANUARY</strong></p>
-<div>
-  <table class="confluenceTable">
-    <tbody>
-      <tr>
-        <td colspan="1" class="confluenceTd">Single Person</td>
-        <td colspan="1" class="confluenceTd">Jan-4</td>
-      </tr>
-      <tr>
-        <td class="confluenceTd">
-	  <p>Person 1 &amp;</p>
-	  <p>Person 2 &amp;</p>
-	  <p>Person 3</p>
-	</td>
-	<td class="confluenceTd">Jan-5</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-```
 
 ## Options
 
